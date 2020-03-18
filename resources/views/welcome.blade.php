@@ -1,5 +1,7 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
-    <p>Este apartado aparecerá en la sección "content".</p>
+    <div class="title m-b-md">
+        {{ config('app.name', 'Laravel') }}
+    </div>
 @endsection
