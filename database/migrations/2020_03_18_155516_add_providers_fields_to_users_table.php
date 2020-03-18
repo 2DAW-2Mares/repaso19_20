@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddEspecialidadFieldToUsersTable extends Migration
+class AddProvidersFieldsToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class AddEspecialidadFieldToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->addColumn('bigInteger', 'especialidad_id')->unsigned()->nullable();
-            $table->foreign('especialidad_id')->references('id')->on('especialidades');
+            $table->string('provider')->nullable();
+            $table->string('provider_id')->nullable();
         });
     }
 
@@ -27,8 +27,8 @@ class AddEspecialidadFieldToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign('users_especialidad_id_foreign');
-            $table->dropColumn('especialidad_id');
+            $table->dropColumn('provider');
+            $table->dropColumn('provider_id');
         });
     }
 }

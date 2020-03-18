@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ciclo extends Model
 {
-    public static $grados = array('FPB', 'GM', 'GS');
+    public static $grados = array('ESO-Bach', 'FPB', 'GM', 'GS');
 
     /**
      * Los módulos que componen un ciclo.

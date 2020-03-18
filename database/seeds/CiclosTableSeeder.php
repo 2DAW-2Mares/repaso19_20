@@ -22,6 +22,7 @@ class CiclosTableSeeder extends Seeder
     }
 
     public static $arrayCiclos = [
+        array("grado" =>'ESO-Bach', "nombre" =>"E.S.O. y Bachillerato"),
         array("grado" =>'FPB', "nombre" =>"Informática de Oficina"),
         array("grado" =>'FPB', "nombre" =>"Informática y Comunicaciones"),
         array("grado" =>'GM', "nombre" =>"Sistemas Microinformáticos y Redes"),
