@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">
+                    Lista de docentes inscritos:</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,8 +14,15 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                        <ul>
+                            @foreach ($users as $user)
+                                <li><strong>{{ $user->name }}</strong> ({{ $user->especialidad->nombre }})
+                                    @if(\Illuminate\Support\Facades\Auth::id() == $user->id )
+                                        <a href="/preferencias">Cambiar preferencias</a>
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
                 </div>
             </div>
         </div>

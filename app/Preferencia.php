@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 class Preferencia extends Pivot
 {
     public static $roles = array('Gestor', 'Colaborador');
+    protected $table = 'preferencias';
 
     public $incrementing = true;
 

@@ -17,9 +17,9 @@ class CreatePreferenciasTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('modulo_codigo')->unsigned();
-            $table->unsignedTinyInteger('orden');
+            $table->unsignedTinyInteger('orden')->nullable()->default(1);
             $table->boolean('aceptado')->default(false);
-            $table->enum('role', \App\Preferencia::$roles);
+            $table->enum('role', \App\Preferencia::$roles)->nullable()->default('Colaborador');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('modulo_codigo')->references('codigo')->on('modulos');

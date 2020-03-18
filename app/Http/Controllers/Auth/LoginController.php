@@ -74,15 +74,13 @@ class LoginController extends Controller
         }
 
         $user_database = new User;
-        $user_database->name = $user->name;
-        $user_database->email = $user->email;
+        $user_database->name = $user->getName();
+        $user_database->email = $user->getEmail();
         $user_database->provider = 'google';
-        $user_database->provider_id = $user->id;
+        $user_database->provider_id = $user->getId();
         $user_database->password = md5(rand(1,10000));
         $user_database->save();
         return $user_database;
-
     }
-
 
 }
