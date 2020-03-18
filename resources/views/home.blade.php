@@ -16,7 +16,7 @@
                     @endif
                         <ul>
                             @foreach ($users as $user)
-                                <li><strong>{{ $user->name }}</strong> ({{ $user->especialidad->nombre }})
+                                <li><strong>{{ $user->name }}</strong>
                                     @if(\Illuminate\Support\Facades\Auth::id() == $user->id )
                                         <a href="/preferencias">Cambiar preferencias</a>
                                     @endif
