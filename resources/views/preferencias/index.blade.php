@@ -44,20 +44,19 @@
                                 </tr>
                                 @foreach ($ciclo->modulos as $modulo)
 
-                                    @if(!in_array($modulo->codigo, $misModulosCodigo))
                                         <tr>
                                             <td><strong>{{ $modulo->nombre }}</strong> ({{ $modulo->especialidad->nombre }})</td>
                                             <td>{{ $modulo->cuantosDocentes() }}</td>
                                             <td>
+                                                @if(!in_array($modulo->codigo, $misModulosCodigo))
                                                 <form method="POST" action="/preferencias" class = "pull-right">
                                                     @csrf
                                                     <input type="hidden" name="modulo_codigo" value="{{ $modulo->codigo }}">
                                                     <input type="submit" value="+" class="btn btn-success">
                                                 </form>
+                                                @endif
                                             </td>
-
                                         </tr>
-                                    @endif
                                 @endforeach
                             @endforeach
                             </tbody>
