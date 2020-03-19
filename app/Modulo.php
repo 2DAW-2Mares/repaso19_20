@@ -40,4 +40,8 @@ class Modulo extends Model
     {
         return $this->belongsToMany('App\User')->using('App\Preferencia');
     }
+
+    public function cuantosDocentes() {
+        return Preferencia::where('modulo_codigo', $this->codigo)->count();
+    }
 }

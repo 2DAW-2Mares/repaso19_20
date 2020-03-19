@@ -30,9 +30,9 @@ class ModulosTableSeeder extends Seeder
     }
 
     public static $arrayModulos = [
-        array("codigo" =>1, "nombre" =>"Tecnologías de la Información y la Comunicación", "especialidad" =>"Informática", "ciclo" => "ESO-Bach"),
-        array("codigo" =>2, "nombre" =>"Tecnologías de la Información y la Comunicación Bachillerato I", "especialidad" =>"Informática", "ciclo" => "ESO-Bach"),
-        array("codigo" =>3, "nombre" =>"Tecnologías de la Información y la Comunicación Bachillerato II", "especialidad" =>"Informática", "ciclo" => "ESO-Bach"),
+        array("codigo" =>1, "nombre" =>"Tecnologías de la Información y la Comunicación", "especialidad" =>"Informática", "ciclo" => "E.S.O. y Bachillerato"),
+        array("codigo" =>2, "nombre" =>"Tecnologías de la Información y la Comunicación Bachillerato I", "especialidad" =>"Informática", "ciclo" => "E.S.O. y Bachillerato"),
+        array("codigo" =>3, "nombre" =>"Tecnologías de la Información y la Comunicación Bachillerato II", "especialidad" =>"Informática", "ciclo" => "E.S.O. y Bachillerato"),
 
         array("codigo" =>3031, "nombre" =>"Ofimática y archivo de documentos", "especialidad" =>"Sistemas y Aplicaciones Informáticas", "ciclo" => "Informática de Oficina"),
         array("codigo" =>3029, "nombre" =>"Montaje y mantenimiento de sistemas y componentes informáticos", "especialidad" =>"Sistemas y Aplicaciones Informáticas", "ciclo" => "Informática de Oficina"),

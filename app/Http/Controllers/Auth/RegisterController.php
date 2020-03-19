@@ -65,7 +65,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return view('auth.register');
 /*        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
