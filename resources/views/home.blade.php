@@ -15,12 +15,14 @@
                         </div>
                     @endif
                         <ul>
-                            @foreach ($users as $user)
-                                <li><strong>{{ $user->name }}</strong>
-                                    @if(\Illuminate\Support\Facades\Auth::id() == $user->id )
-                                        <a href="/preferencias">Cambiar preferencias</a>
-                                    @endif
+                                <li>
+                                    <strong>{{ \Illuminate\Support\Facades\Auth::user()->name }}</strong>
+                                    <a href="/preferencias">Cambiar preferencias</a>
                                 </li>
+                            @foreach ($users as $user)
+                                    @if(! (\Illuminate\Support\Facades\Auth::id() == $user->id) )
+                                        <li><strong>{{ $user->name }}</strong></li>
+                                    @endif
                             @endforeach
                         </ul>
                 </div>
