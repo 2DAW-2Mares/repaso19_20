@@ -24,6 +24,7 @@ class PreferenciaController extends Controller
                 'preferencias' => $misPreferencias,
                 'ciclos' => Ciclo::all(),
                 'misModulosCodigo' => $misModulosCodigo->all(),
+                'preferenciasPorModulo' => Preferencia::porModulo(),
             ]);
     }
 

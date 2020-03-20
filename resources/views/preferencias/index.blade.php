@@ -46,7 +46,13 @@
 
                                         <tr>
                                             <td><strong>{{ $modulo->nombre }}</strong> ({{ $modulo->especialidad->nombre }})</td>
-                                            <td>{{ $modulo->cuantosDocentes() }}</td>
+                                            <td>
+                                                {{
+                                                    array_key_exists($modulo->codigo, $preferenciasPorModulo)
+                                                    ? $preferenciasPorModulo[$modulo->codigo]
+                                                    : 0
+                                                 }}
+                                            </td>
                                             <td>
                                                 @if(!in_array($modulo->codigo, $misModulosCodigo))
                                                 <form method="POST" action="/preferencias" class = "pull-right">

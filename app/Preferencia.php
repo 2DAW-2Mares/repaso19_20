@@ -27,4 +27,13 @@ class Preferencia extends Pivot
         return $this->belongsTo('App\Modulo');
     }
 
+    public static function porModulo() {
+        $preferenciasPorModulo = self::selectRaw('modulo_codigo, count(*) as vecesElegido' )->groupBy('modulo_codigo')->get();
+        $preferenciasPorModuloArray = array();
+        foreach ($preferenciasPorModulo as $modulo) {
+            $preferenciasPorModuloArray[$modulo->modulo_codigo] = $modulo->vecesElegido;
+        }
+        return $preferenciasPorModuloArray;
+    }
+
 }
