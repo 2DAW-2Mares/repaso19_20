@@ -38,7 +38,7 @@ class Modulo extends Model
      */
     public function users()
     {
-        return $this->belongsToMany('App\User')->using('App\Preferencia');
+        return $this->belongsToMany('App\User', 'preferencias');
     }
 
     public function cuantosDocentes() {

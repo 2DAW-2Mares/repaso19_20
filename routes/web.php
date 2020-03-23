@@ -22,4 +22,5 @@ Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCall
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('preferencias', 'PreferenciaController');
+    Route::get('users/modulo/{modulo}', 'PreferenciaController@usersModulo');
 });

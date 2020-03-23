@@ -58,6 +58,6 @@ class User extends Authenticatable
      */
     public function modulos()
     {
-        return $this->belongsToMany('App\Modulo')->using('App\Preferencia');
+        return $this->belongsToMany('App\Modulo', 'preferencias');
     }
 }

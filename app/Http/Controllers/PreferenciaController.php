@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Modulo;
 use App\Preferencia;
 use App\Ciclo;
 
@@ -100,4 +101,19 @@ class PreferenciaController extends Controller
         }
         return redirect('/preferencias');
     }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function usersModulo(Modulo $modulo)
+    {
+        $users = $modulo->users;
+        return view('preferencias.usersModulo')
+            ->with([
+                'modulo' => $modulo,
+                'users' => $users
+            ]);
+    }
+
 }

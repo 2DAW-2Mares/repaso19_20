@@ -47,11 +47,13 @@
                                         <tr>
                                             <td><strong>{{ $modulo->nombre }}</strong> ({{ $modulo->especialidad->nombre }})</td>
                                             <td>
+                                                <a href="{{ action('PreferenciaController@usersModulo', ['modulo' => $modulo]) }}">
                                                 {{
                                                     array_key_exists($modulo->codigo, $preferenciasPorModulo)
                                                     ? $preferenciasPorModulo[$modulo->codigo]
                                                     : 0
                                                  }}
+                                                </a>
                                             </td>
                                             <td>
                                                 @if(!in_array($modulo->codigo, $misModulosCodigo))
